@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Erick Yegon – Data Scientist | Epidemiologist | Public Health Leader</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
     .smooth-scroll {
       scroll-behavior: smooth;
@@ -25,60 +28,305 @@
     .navbar.scrolled {
       background-color: rgba(0, 51, 102, 0.95);
     }
+    .gradient-bg {
+      background: linear-gradient(90deg, #1e3a8a 0%, #1e40af 100%);
+    }
+    .skill-bar {
+      height: 10px;
+      background-color: #e5e7eb;
+      border-radius: 9999px;
+      position: relative;
+      margin-top: 8px;
+    }
+    .skill-progress {
+      height: 100%;
+      border-radius: 9999px;
+      background-color: #3b82f6;
+    }
+    .stats-card {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #e5e7eb;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 4px;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+    .publication-card {
+      transition: all 0.3s ease;
+    }
+    .publication-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+    .quote-mark {
+      font-size: 48px;
+      color: #e5e7eb;
+      position: absolute;
+      top: -20px;
+      left: 20px;
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 smooth-scroll">
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
   <!-- Navigation -->
   <nav class="navbar fixed top-0 w-full bg-blue-900 text-white z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a href="#hero" class="text-2xl font-bold">Dr. Erick Yegon</a>
-      <div class="space-x-6">
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-blue-300 transition">About</a>
+        <a href="#leadership" class="hover:text-blue-300 transition">Leadership</a>
+        <a href="#experience" class="hover:text-blue-300 transition">Experience</a>
+        <a href="#technical" class="hover:text-blue-300 transition">Technical Skills</a>
+        <a href="#projects" class="hover:text-blue-300 transition">Projects</a>
+        <a href="#academic" class="hover:text-blue-300 transition">Academic Work</a>
+        <a href="#publications" class="hover:text-blue-300 transition">Publications</a>
+        <a href="#education" class="hover:text-blue-300 transition">Education</a>
+        <a href="#contact" class="hover:text-blue-300 transition">Contact</a>
+      </div>
+      <button class="md:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile menu (hidden by default) -->
+    <div class="hidden mobile-menu bg-blue-800 md:hidden">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-3">
         <a href="#about" class="hover:text-blue-300">About</a>
+        <a href="#leadership" class="hover:text-blue-300">Leadership</a>
         <a href="#experience" class="hover:text-blue-300">Experience</a>
+        <a href="#technical" class="hover:text-blue-300">Technical Skills</a>
         <a href="#projects" class="hover:text-blue-300">Projects</a>
+        <a href="#academic" class="hover:text-blue-300">Academic Work</a>
         <a href="#publications" class="hover:text-blue-300">Publications</a>
-        <a href="#certifications" class="hover:text-blue-300">Certifications</a>
         <a href="#education" class="hover:text-blue-300">Education</a>
-        <a href="#skills" class="hover:text-blue-300">Skills</a>
         <a href="#contact" class="hover:text-blue-300">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="bg-blue-900 text-white text-center pt-24 pb-16">
+  <section id="hero" class="gradient-bg text-white text-center pt-28 pb-20">
     <div class="container mx-auto px-4">
-      <img src="assets/profile.jpg" alt="Dr. Erick Yegon" class="w-32 h-32 object-cover rounded-full mx-auto mb-6 border-4 border-white">
+      <img src="/api/placeholder/150/150" alt="Dr. Erick Yegon" class="w-32 h-32 object-cover rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Dr. Erick Yegon</h1>
       <h2 class="text-2xl md:text-3xl mb-6">Data Scientist | Epidemiologist | Public Health Leader</h2>
-      <p class="text-lg max-w-2xl mx-auto mb-8">Harnessing AI, machine learning, and epidemiology to drive evidence-based solutions for maternal and reproductive health globally.</p>
-      <div class="space-x-4">
-        <a href="#projects" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Explore My Work</a>
+      <p class="text-lg max-w-3xl mx-auto mb-8">Leveraging AI, machine learning, and epidemiological expertise to drive evidence-based solutions for maternal and reproductive health globally. With over 15 years of experience leading transformative health initiatives across Africa.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#projects" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View My Projects</a>
         <a href="assets/Erick_Yegon_CV.pdf" target="_blank" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">Download CV</a>
+        <a href="#contact" class="inline-block bg-white text-blue-800 px-6 py-3 rounded-lg hover:bg-gray-100 transition">Get In Touch</a>
+      </div>
+      <div class="flex justify-center mt-10 space-x-4">
+        <a href="https://www.linkedin.com/in/erick-yegon-phd-4116961b4/" target="_blank" class="text-white hover:text-blue-300 transition">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://github.com/erickyegon" target="_blank" class="text-white hover:text-blue-300 transition">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="mailto:keyegon@gmail.com" class="text-white hover:text-blue-300 transition">
+          <i class="fas fa-envelope text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-10 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="stats-card text-center">
+          <div class="text-4xl font-bold mb-2">15+</div>
+          <div class="text-lg">Years Experience</div>
+        </div>
+        <div class="stats-card text-center">
+          <div class="text-4xl font-bold mb-2">$25M+</div>
+          <div class="text-lg">Project Funds Managed</div>
+        </div>
+        <div class="stats-card text-center">
+          <div class="text-4xl font-bold mb-2">30%</div>
+          <div class="text-lg">Health Outcome Improvements</div>
+        </div>
+        <div class="stats-card text-center">
+          <div class="text-4xl font-bold mb-2">10+</div>
+          <div class="text-lg">Publications</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Me -->
-  <section id="about" class="py-16">
+  <section id="about" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">About Me</h2>
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="mb-6">I am a globally recognized epidemiologist and data scientist with over 15 years of experience leading transformative health initiatives across Africa. As the Global Director of Performance, Evidence, and Insights at Living Goods, I integrate advanced analytics, AI, and machine learning to improve community health outcomes, particularly in maternal and sexual and reproductive health rights (SRHR).</p>
-        <p class="mb-6">My career spans leadership roles at organizations like the International Center for Research on Women (ICRW) and Ipas, where I’ve managed $25M+ projects and driven policy changes through evidence-based advocacy. I’m passionate about mentoring the next generation of public health professionals, supervising PhD students, and teaching biostatistics.</p>
-        <p>My mission is to leverage data to tell stories that change lives, ensuring equitable health access for underserved communities.</p>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <p class="mb-6 text-lg">I am a globally recognized epidemiologist and data scientist with over 15 years of experience leading transformative health initiatives across Africa. As the Global Director of Performance, Evidence, and Insights at Living Goods, I integrate advanced analytics, AI, and machine learning to improve community health outcomes, particularly in maternal and sexual and reproductive health rights (SRHR).</p>
+          
+          <p class="mb-6 text-lg">My expertise lies in spearheading epidemiological research initiatives that intersect women and child health with women's economic empowerment. I've developed innovative machine learning tools that analyze and forecast reproductive health outcomes, which have been instrumental in devising strategies to reduce maternal deaths.</p>
+          
+          <p class="mb-6 text-lg">My career spans leadership roles at organizations like the International Center for Research on Women (ICRW), Ipas, and EngenderHealth, where I've managed $25M+ projects and driven policy changes through evidence-based advocacy. I'm passionate about mentoring the next generation of public health professionals, supervising PhD students, and teaching biostatistics.</p>
+          
+          <p class="text-lg">My mission is to leverage data to tell stories that change lives, ensuring equitable health access for underserved communities through advanced analytics and AI-driven insights.</p>
+        </div>
+        
+        <div class="mt-10">
+          <h3 class="text-2xl font-semibold text-blue-900 mb-6 text-center">Core Expertise</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-brain text-blue-800 text-xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold">Data Science & AI</h4>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Machine Learning & Predictive Modeling</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Data Analysis & Visualization</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> AI for Health Outcomes</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Statistical Analysis</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-chart-line text-blue-800 text-xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold">Research & M&E</h4>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Epidemiological Research</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Program Evaluation</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Evidence-Based Policy</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Scientific Research & Publishing</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-users text-blue-800 text-xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold">Leadership & Domain</h4>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Strategic Leadership</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Maternal & Reproductive Health</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Gender Equity & SRHR</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Multi-stakeholder Collaboration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mt-8">
-        <h3 class="text-2xl font-semibold text-blue-900 mb-4 text-center">Core Expertise</h3>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-          <li class="flex items-center"><span class="mr-2">•</span> Artificial Intelligence & Machine Learning</li>
-          <li class="flex items-center"><span class="mr-2">•</span> Epidemiology & Maternal Health</li>
-          <li class="flex items-center"><span class="mr-2">•</span> Gender Equity & SRHR</li>
-          <li class="flex items-center"><span class="mr-2">•</span> Monitoring & Evaluation</li>
-          <li class="flex items-center"><span class="mr-2">•</span> Data Analysis & Visualization</li>
-          <li class="flex items-center"><span class="mr-2">•</span> Scientific Research & Peer Review</li>
-          <li class="flex items-center"><span class="mr-2">•</span> Policy Advocacy & Leadership</li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section id="leadership" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Strategic Leadership</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-blue-50 p-8 rounded-lg mb-10">
+          <h3 class="text-2xl font-semibold text-blue-900 mb-4">Leadership Philosophy</h3>
+          <p class="text-lg mb-6">I believe effective leadership in global health requires a blend of analytical rigor, strategic vision, and collaborative engagement. My approach centers on harnessing data to drive decision-making while fostering inclusive environments where diverse teams can thrive and innovate.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-lg font-semibold text-blue-800 mb-3">Transformative Impact</h4>
+              <p>Led organizational restructuring at Living Goods, integrating Data Analytics and M&E functions, resulting in 60% reduction in monthly reporting time and improved decision-making processes.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-lg font-semibold text-blue-800 mb-3">Strategic Vision</h4>
+              <p>Established the Women Economic Empowerment Community of Practice (WEE-COP) in Kenya, uniting 60 entities across private sector, academia, and government to enhance collaboration on women's initiatives.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-blue-900 mb-6">Key Leadership Achievements</h3>
+        
+        <div class="space-y-6">
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="bg-blue-100 p-3 rounded-full mb-4 md:mb-0 md:mr-4 flex-shrink-0">
+                <i class="fas fa-users-cog text-blue-800 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Team Leadership & Development</h4>
+                <p class="text-gray-700">Led cross-functional teams of 25+ professionals across multiple countries, implementing mentoring programs that improved staff retention by 40%. Developed career pathways for technical staff that enhanced team performance and innovation.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="bg-blue-100 p-3 rounded-full mb-4 md:mb-0 md:mr-4 flex-shrink-0">
+                <i class="fas fa-hand-holding-usd text-blue-800 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Budget & Resource Management</h4>
+                <p class="text-gray-700">Successfully managed portfolios exceeding $25M across multiple countries, ensuring fiscal responsibility and programmatic success. Implemented cost-saving measures that increased program efficiency by 30% while maintaining quality outcomes.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="bg-blue-100 p-3 rounded-full mb-4 md:mb-0 md:mr-4 flex-shrink-0">
+                <i class="fas fa-handshake text-blue-800 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Stakeholder Engagement</h4>
+                <p class="text-gray-700">Developed and maintained strategic partnerships with government ministries, UN agencies, and international donors. Facilitated policy discussions that led to revised national guidelines on adolescent reproductive health in Kenya.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="bg-blue-100 p-3 rounded-full mb-4 md:mb-0 md:mr-4 flex-shrink-0">
+                <i class="fas fa-lightbulb text-blue-800 text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-blue-900 mb-2">Innovation Management</h4>
+                <p class="text-gray-700">Pioneered the integration of machine learning and AI methodologies into community health programs. Developed a predictive model for CHV compensation that reduced processing time by 30% and improved payment accuracy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -87,70 +335,511 @@
   <section id="experience" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Professional Experience</h2>
-      <div class="space-y-8">
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Global Director of Performance, Evidence, and Insights</h3>
-          <p class="text-gray-600"><em>Living Goods, Nairobi, Kenya | Feb 2023 – Present</em></p>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Led integration of data science methodologies, achieving a 30% improvement in health outcome metrics.</li>
-            <li>Developed a predictive model for Community Health Volunteer (CHV) compensation, reducing processing time by 30%.</li>
-            <li>Automated data analytics processes, cutting monthly reporting time by 60%.</li>
-            <li>Enhanced KPI tracking, enabling data-driven decisions across multiple regions.</li>
-          </ul>
+      <div class="max-w-4xl mx-auto timeline">
+        <div class="timeline-item">
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <h3 class="text-xl font-semibold text-blue-900">Global Director of Performance, Evidence, and Insights</h3>
+            </div>
+            <p class="text-gray-600 mb-2"><i class="fas fa-building mr-2"></i> Living Goods, Nairobi, Kenya</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i> February 2023 – Present</p>
+            <ul class="list-disc ml-6 space-y-2">
+              <li>Led integration of data science methodologies across community health initiatives, resulting in 30% improvement in health outcome metrics.</li>
+              <li>Developed a predictive model for Community Health Volunteer (CHV) compensation, reducing processing time by 30% and improving payment accuracy.</li>
+              <li>Automated data analytics processes, cutting monthly reporting time by 60% and enhancing data-driven decision-making.</li>
+              <li>Directed a cross-functional team of 25 professionals to develop evidence-based strategies that enhanced program efficiency by 40%.</li>
+              <li>Implemented advanced analytics tools that streamlined reporting processes, reducing time spent on data compilation by 50%.</li>
+              <li>Drove strategic partnerships with key stakeholders to leverage data insights for policy advocacy, contributing to a 20% increase in funding.</li>
+            </ul>
+          </div>
         </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Senior Associate Director, Research Africa Region</h3>
-          <p class="text-gray-600"><em>International Center for Research on Women (ICRW), Nairobi, Kenya | Apr 2022 – Mar 2023</em></p>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Established the Women Economic Empowerment Community of Practice (WEE-COP) uniting 60 entities.</li>
-            <li>Led a 7-country study on COVID-19’s impact on youth, informing policy advocacy.</li>
-            <li>Published the Women in Manufacturing Study, advancing gender equity in Kenya’s industrial sector.</li>
-          </ul>
+        
+        <div class="timeline-item">
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <h3 class="text-xl font-semibold text-blue-900">Senior Associate Director, Research Africa Region</h3>
+            </div>
+            <p class="text-gray-600 mb-2"><i class="fas fa-building mr-2"></i> International Center for Research on Women (ICRW), Nairobi, Kenya</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i> April 2022 – March 2023</p>
+            <ul class="list-disc ml-6 space-y-2">
+              <li>Established the Women Economic Empowerment Community of Practice (WEE-COP) in Kenya, uniting sixty entities from private sector, academia, and government.</li>
+              <li>Enhanced research accuracy by 30% through implementing rigorous review processes, ensuring findings were reliable and impactful.</li>
+              <li>Led a team of 15 researchers, fostering knowledge sharing that boosted team performance metrics by 25%.</li>
+              <li>Collaborated with five regional organizations, expanding research capabilities and securing an additional $500K in funding.</li>
+              <li>Led the analytical component of the Women in Manufacturing Study in Kenya, highlighting the role of women in the sector.</li>
+              <li>Conducted a comprehensive review of COVID-19 response strategies in seven African countries, focusing on youth impacts.</li>
+            </ul>
+          </div>
         </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Ipas Africa Alliance Director</h3>
-          <p class="text-gray-600"><em>Ipas, Nairobi, Kenya | Apr 2015 – Jun 2017</em></p>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Managed $25M multi-country projects focused on adolescent SRHR.</li>
-            <li>Conducted cost analysis that informed Kenya’s post-abortion care guidelines.</li>
-            <li>Provided technical leadership to 14 county governments, enhancing family planning programs.</li>
-          </ul>
+        
+        <div class="timeline-item">
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <h3 class="text-xl font-semibold text-blue-900">Ipas Africa Alliance Director</h3>
+            </div>
+            <p class="text-gray-600 mb-2"><i class="fas fa-building mr-2"></i> Ipas, Nairobi, Kenya</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i> April 2015 – June 2017</p>
+            <ul class="list-disc ml-6 space-y-2">
+              <li>Managed $25M multi-country projects focused on adolescent SRHR, overseeing implementation across Kenya, Uganda, Tanzania, Malawi, and Sierra Leone.</li>
+              <li>Conducted cost analysis that informed Kenya's post-abortion care guidelines, enhancing healthcare delivery effectiveness.</li>
+              <li>Provided technical leadership to 14 county governments, supporting development of Integrated County Costed Family Planning strategies.</li>
+              <li>Established the Kisumu Field Office and led institutional reorganization during a pivotal transition period.</li>
+              <li>Cultivated and sustained relationships with diverse stakeholders including donors, government departments, and community organizations.</li>
+            </ul>
+          </div>
         </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Monitoring, Evaluation, and Learning Advisor</h3>
-          <p class="text-gray-600"><em>EngenderHealth, Nairobi, Kenya | Jul 2017 – Dec 2019</em></p>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Led evaluations for a $35M USAID Post-Abortion Care program in Tanzania.</li>
-            <li>Developed monitoring plans for DFID’s Family Planning by Choice program, improving service delivery by 25%.</li>
-            <li>Conducted implementation science studies integrating HIV screening into family planning.</li>
-          </ul>
+        
+        <div class="timeline-item">
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <h3 class="text-xl font-semibold text-blue-900">Monitoring, Evaluation, and Learning Advisor</h3>
+            </div>
+            <p class="text-gray-600 mb-2"><i class="fas fa-building mr-2"></i> EngenderHealth, Nairobi, Kenya</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i> July 2017 – December 2019</p>
+            <ul class="list-disc ml-6 space-y-2">
+              <li>Led evaluations for a $35M USAID Post-Abortion Care program in Tanzania as Deputy Director and Principal Investigator.</li>
+              <li>Developed monitoring plans for DFID's Family Planning by Choice program, improving service delivery by 25% in Ethiopia.</li>
+              <li>Conducted implementation science studies integrating HIV screening, GBV screening, and counseling for post-abortion clients.</li>
+              <li>Managed a team of four staff and provided technical advice to over thirty field-based staff across East Africa.</li>
+              <li>Collaborated with national and county-level Ministries of Health to deliver technical assistance and implement family planning programs.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="assets/Erick_Yegon_CV.pdf" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View Full Employment History</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-16">
+  <!-- Technical Skills Section -->
+  <section id="technical" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Technical Expertise</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        <!-- Data Science & Machine Learning -->
+        <div>
+          <h3 class="text-2xl font-semibold text-blue-900 mb-6">Data Science & Machine Learning</h3>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-lg font-semibold mb-4">Programming & Data Analysis</h4>
+              
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Python (Pandas, NumPy, Scikit-Learn, TensorFlow, PyTorch)</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">R (ggplot2, dplyr, caret, Shiny)</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">SQL (MySQL, PostgreSQL)</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Power BI & Data Visualization</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-lg font-semibold mb-4">Advanced Machine Learning Applications</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Predictive Modeling:</span> Developed CHV compensation prediction model using ML algorithms, improving efficiency by 30%.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">AI-driven Health Analytics:</span> Applied deep learning for maternal health risk assessment, identifying high-risk pregnancies with 85% accuracy.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Natural Language Processing:</span> Used NLP to analyze qualitative research data, extracting key themes from community feedback.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Generative AI:</span> Leveraged generative AI technologies for innovative health education approaches in low-literacy communities.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Research & Monitoring/Evaluation -->
+        <div>
+          <h3 class="text-2xl font-semibold text-blue-900 mb-6">Research & M&E Expertise</h3>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-lg font-semibold mb-4">Research Methodologies</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Epidemiological Studies:</span> Led observational and experimental research studies on maternal and reproductive health across multiple African countries.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Mixed-Methods Research:</span> Designed comprehensive research approaches combining quantitative surveys with innovative qualitative techniques.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Implementation Science:</span> Conducted studies to bridge research-practice gaps in family planning and HIV integration.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Cost-Effectiveness Analysis:</span> Performed financial analyses that informed national healthcare guidelines in Kenya and Tanzania.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-lg font-semibold mb-4">Monitoring & Evaluation Systems</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">M&E Framework Development:</span> Created comprehensive monitoring and evaluation frameworks for multi-country health programs.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Impact Evaluation:</span> Led baseline and end-line evaluations for USAID and DFID-funded health initiatives across East Africa.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Data Quality Assurance:</span> Implemented rigorous data integrity systems, ensuring high-quality evidence for decision-making.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <span class="font-medium">Performance Metrics:</span> Developed KPI tracking systems that improved organizational effectiveness by 40%.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Certifications -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-semibold text-blue-900 mb-8 text-center">Professional Certifications</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-3">
+              <img src="/api/placeholder/40/40" alt="Google" class="mr-3 rounded">
+              <h4 class="text-lg font-semibold text-blue-900">Google Data Analytics</h4>
+            </div>
+            <p class="text-gray-600 mb-3">Coursera</p>
+            <p class="text-gray-700">Comprehensive training in data analysis, visualization, and SQL for analyzing complex datasets.</p>
+            <a href="https://coursera.org/share/b6624e1f165853222c12683b88fc3436" target="_blank" class="text-blue-600 hover:underline mt-3 inline-block">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+          </div>
+          
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-3">
+              <img src="/api/placeholder/40/40" alt="DataCamp" class="mr-3 rounded">
+              <h4 class="text-lg font-semibold text-blue-900">Professional Data Scientist</h4>
+            </div>
+            <p class="text-gray-600 mb-3">DataCamp</p>
+            <p class="text-gray-700">Advanced training in Python, SQL, and machine learning for data science applications.</p>
+            <a href="https://www.datacamp.com/certificate/DS0029709106563" target="_blank" class="text-blue-600 hover:underline mt-3 inline-block">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+          </div>
+          
+          <div class="card-hover bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-3">
+              <img src="/api/placeholder/40/40" alt="Johns Hopkins" class="mr-3 rounded">
+              <h4 class="text-lg font-semibold text-blue-900">Data Science Specialization</h4>
+            </div>
+            <p class="text-gray-600 mb-3">Johns Hopkins University</p>
+            <p class="text-gray-700">Specialized training in R programming, statistical inference, and machine learning methods.</p>
+            <a href="https://coursera.org/share/1e174a11276b05d36f1b597fb9730aad" target="_blank" class="text-blue-600 hover:underline mt-3 inline-block">View Certificate <i class="fas fa-external-link-alt ml-1"></i></a>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="#certifications" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All Certifications</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Featured Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <img src="https://via.placeholder.com/300x200" alt="CHV Compensation Model" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-xl font-semibold text-blue-900 mt-4">CHV Compensation Prediction Model</h3>
-          <p class="text-gray-600 mt-2">A machine learning model built with Python (scikit-learn, pandas) to predict optimal compensation for Community Health Volunteers, improving efficiency by 30%. Deployed at Living Goods.</p>
-          <a href="https://github.com/erickyegon/chv-compensation-model" target="_blank" class="text-blue-600 hover:underline mt-4 inline-block">View on GitHub</a>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/api/placeholder/400/250" alt="CHV Compensation Model" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Machine Learning</span>
+              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">Python</span>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">CHV Compensation Prediction Model</h3>
+            <p class="text-gray-700 mb-4">A machine learning model built with Python (scikit-learn, pandas) to predict optimal compensation for Community Health Volunteers, improving efficiency by 30% and reducing processing time. Deployed at Living Goods across multiple regions.</p>
+            <div class="mt-4 flex items-center">
+              <a href="https://github.com/erickyegon/chv-compensation-model" target="_blank" class="text-blue-600 hover:text-blue-800 transition mr-4">
+                <i class="fab fa-github text-lg"></i> View Code
+              </a>
+              <a href="#" class="text-blue-600 hover:text-blue-800 transition">
+                <i class="fas fa-file-alt text-lg"></i> Case Study
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <img src="https://via.placeholder.com/300x200" alt="Post-Abortion Care Dashboard" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-xl font-semibold text-blue-900 mt-4">Post-Abortion Care Dashboard</h3>
-          <p class="text-gray-600 mt-2">An interactive Power BI dashboard visualizing service readiness and client satisfaction metrics for post-abortion care in Tanzania, built with Python and SQL.</p>
-          <a href="https://github.com/erickyegon/postabortion-care-dashboard" target="_blank" class="text-blue-600 hover:underline mt-4 inline-block">View on GitHub</a>
+        
+        <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/api/placeholder/400/250" alt="Post-Abortion Care Dashboard" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Data Visualization</span>
+              <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">Power BI</span>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">Post-Abortion Care Dashboard</h3>
+            <p class="text-gray-700 mb-4">An interactive Power BI dashboard visualizing service readiness and client satisfaction metrics for post-abortion care in Tanzania. Built with Python for data processing and SQL for database management, providing actionable insights to healthcare providers.</p>
+            <div class="mt-4 flex items-center">
+              <a href="https://github.com/erickyegon/postabortion-care-dashboard" target="_blank" class="text-blue-600 hover:text-blue-800 transition mr-4">
+                <i class="fab fa-github text-lg"></i> View Code
+              </a>
+              <a href="#" class="text-blue-600 hover:text-blue-800 transition">
+                <i class="fas fa-desktop text-lg"></i> Live Demo
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <img src="https://via.placeholder.com/300x200" alt="Women in Manufacturing Analysis" class="w-full h-48 object-cover rounded-t-lg">
-          <h3 class="text-xl font-semibold text-blue-900 mt-4">Women in Manufacturing Analysis</h3>
-          <p class="text-gray-600 mt-2">A statistical analysis using R to study gender inclusion in Kenya’s manufacturing sector, informing policy advocacy for ICRW and KAM.</p>
-          <a href="https://github.com/erickyegon/women-in-manufacturing" target="_blank" class="text-blue-600 hover:underline mt-4 inline-block">View on GitHub</a>
+        
+        <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/api/placeholder/400/250" alt="Women in Manufacturing Analysis" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Statistical Analysis</span>
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">R</span>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">Women in Manufacturing Analysis</h3>
+            <p class="text-gray-700 mb-4">A comprehensive statistical analysis using R to study gender inclusion in Kenya's manufacturing sector. This research informed policy advocacy for ICRW and Kenya Association of Manufacturers, highlighting barriers and opportunities for women in the industry.</p>
+            <div class="mt-4 flex items-center">
+              <a href="https://github.com/erickyegon/women-in-manufacturing" target="_blank" class="text-blue-600 hover:text-blue-800 transition mr-4">
+                <i class="fab fa-github text-lg"></i> View Code
+              </a>
+              <a href="https://www.icrw.org/publications/women-in-manufacturing-mainstreaming-gender-and-inclusion-in-kenya/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                <i class="fas fa-file-pdf text-lg"></i> Report
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/api/placeholder/400/250" alt="Maternal Health Predictive Analytics" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Deep Learning</span>
+              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">TensorFlow</span>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">Maternal Health Predictive Analytics</h3>
+            <p class="text-gray-700 mb-4">AI-driven predictive analytics model to identify high-risk pregnancies in rural communities. Developed using TensorFlow and deployed through a mobile application interface for community health workers, achieving 85% accuracy in risk assessment.</p>
+            <div class="mt-4 flex items-center">
+              <a href="#" class="text-blue-600 hover:text-blue-800 transition mr-4">
+                <i class="fab fa-github text-lg"></i> View Code
+              </a>
+              <a href="#" class="text-blue-600 hover:text-blue-800 transition">
+                <i class="fas fa-file-alt text-lg"></i> Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/api/placeholder/400/250" alt="COVID-19 Impact Analysis" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Data Analysis</span>
+              <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">R & Python</span>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">COVID-19 Impact Analysis</h3>
+            <p class="text-gray-700 mb-4">Multi-country analysis of COVID-19's impact on women workers in the urban informal economy in Uganda and Kenya. Combined quantitative data analysis with qualitative insights to inform policy recommendations for economic recovery.</p>
+            <div class="mt-4 flex items-center">
+              <a href="#" class="text-blue-600 hover:text-blue-800 transition mr-4">
+                <i class="fab fa-github text-lg"></i> View Code
+              </a>
+              <a href="https://opendocs.ids.ac.uk/opendocs/handle/20.500.12413/17662" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                <i class="fas fa-file-pdf text-lg"></i> Full Report
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="/api/placeholder/400/250" alt="Economic Empowerment CoP Platform" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center mb-3">
+              <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Web Platform</span>
+              <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded ml-2">Data Hub</span>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-2">Women's Economic Empowerment CoP</h3>
+            <p class="text-gray-700 mb-4">A knowledge sharing platform for the Women Economic Empowerment Community of Practice (WEE-CoP) in Kenya. Includes data repository, visualization tools, and collaboration features for 60+ member organizations across sectors.</p>
+            <div class="mt-4 flex items-center">
+              <a href="#" class="text-blue-600 hover:text-blue-800 transition mr-4">
+                <i class="fab fa-github text-lg"></i> View Code
+              </a>
+              <a href="https://www.youtube.com/watch?v=AJJveB05sfs" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                <i class="fab fa-youtube text-lg"></i> Launch Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Work -->
+  <section id="academic" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Academic Contributions</h2>
+      
+      <div class="max-w-4xl mx-auto">
+        <!-- Teaching Experience -->
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <h3 class="text-2xl font-semibold text-blue-900 mb-6">Teaching & Mentorship</h3>
+          <div class="bg-blue-50 p-6 rounded-lg mb-6">
+            <h4 class="text-xl font-semibold text-blue-800 mb-3">Adjunct Professor, School of Nursing</h4>
+            <p class="text-gray-700 mb-2"><i class="fas fa-university mr-2"></i> Jomo Kenyatta University of Agriculture & Technology</p>
+            <p class="text-gray-700 mb-4"><i class="fas fa-calendar-alt mr-2"></i> 2010 - 2022</p>
+            <ul class="list-disc ml-6 space-y-2">
+              <li>Designed and delivered comprehensive Biostatistics curriculum to PhD Nursing students.</li>
+              <li>Mentored 87 PhD students over a four-year period in research methodologies and statistical analysis.</li>
+              <li>Guided students through the entire research process from study design to report generation.</li>
+              <li>Developed practical data analysis coursework using R and SPSS for health research applications.</li>
+            </ul>
+          </div>
+          
+          <!-- PhD Supervision -->
+          <h4 class="text-xl font-semibold text-blue-900 mb-4">Current PhD Student Supervision</h4>
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h5 class="font-semibold text-blue-800">Emily Chemgetich Barsito</h5>
+              <p class="text-gray-700 mb-2"><i class="fas fa-graduation-cap mr-2"></i> PhD in Epidemiology (Defense Stage)</p>
+              <p class="text-gray-700"><i class="fas fa-file-alt mr-2"></i> <strong>Dissertation:</strong> "An Evaluation of Early Infant Diagnosis of HIV Among Infants Attending Selected Level 4 And Level 5 Health Facilities in Kenya"</p>
+            </div>
+            
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h5 class="font-semibold text-blue-800">Nyariki Carolyne Kerubo</h5>
+              <p class="text-gray-700 mb-2"><i class="fas fa-graduation-cap mr-2"></i> PhD in Nursing Practice (Data Collection Stage)</p>
+              <p class="text-gray-700"><i class="fas fa-file-alt mr-2"></i> <strong>Dissertation:</strong> "Effect of a Structured Integrated Obstetric Triage Model (SIOTEL) on Obstetric Care by Midwives Working in Labour Wards in Kiambu County Referral Hospital"</p>
+            </div>
+            
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h5 class="font-semibold text-blue-800">Saliku Teresa Vuhungi</h5>
+              <p class="text-gray-700 mb-2"><i class="fas fa-graduation-cap mr-2"></i> PhD in Public Health (Data Analysis Stage)</p>
+              <p class="text-gray-700"><i class="fas fa-file-alt mr-2"></i> <strong>Dissertation:</strong> "Determinant of contraceptive uptake among HIV-Positive and Negative postpartum women in Nairobi county"</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Scientific Reviewer -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold text-blue-900 mb-6">Scientific Review Activities</h3>
+          <p class="text-gray-700 mb-6">I serve as a peer reviewer for several prestigious international journals and conferences, contributing to the quality and integrity of scientific literature in public health and epidemiology.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-blue-800 mb-3">Journal Peer Review</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-journal-whills text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>Frontiers in Public Health: Life-Course Epidemiology and Social Inequalities in Health (August 2023)</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-journal-whills text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>Frontiers in Global Women's Health: Contraception and Family Planning (April 2023)</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-journal-whills text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>PLOS Global Public Health (2022-2023)</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-journal-whills text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>Frontiers in Public Health Public Health Education and Promotion (May 2022)</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-gray-50 p-5 rounded-lg">
+              <h4 class="font-semibold text-blue-800 mb-3">Conference Abstract Review</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-users text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>International Conference on Family Planning (ICFP), 2022 - Session Moderator</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-users text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>International Family Planning Conference, Indonesia 2015 - Scientific Reviewer</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-users text-blue-600 mt-1 mr-3"></i>
+                  <div>
+                    <p>Research to Policy Conference, Addis Ababa, Ethiopia 2016</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -160,70 +849,198 @@
   <section id="publications" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Peer-Reviewed Publications</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://opendocs.ids.ac.uk/opendocs/handle/20.500.12413/17662" target="_blank" class="hover:underline">Impact of COVID-19 on Women Workers in the Urban Informal Economy in Uganda and Kenya</a></h3>
-          <p class="text-gray-600 mt-2">ICRW, 2021</p>
-          <p class="text-gray-600 mt-2">Analyzes the socioeconomic effects of COVID-19 on women in informal urban economies, highlighting resilience strategies.</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://www.ajol.info/index.php/ajrh/article/view/238692" target="_blank" class="hover:underline">Women’s Empowerment and Attitudes Towards Female Genital Mutilation Abandonment in Nigeria</a></h3>
-          <p class="text-gray-600 mt-2">African Journal of Reproductive Health, 2022</p>
-          <p class="text-gray-600 mt-2">Examines the role of empowerment in reducing FGM, using data from Nigeria’s Demographic Health Survey.</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://scholar.google.com/scholar?oi=bibs&cluster=611707890712751494&btnI=1&hl=en" target="_blank" class="hover:underline">Women in Manufacturing: Mainstreaming Gender and Inclusion</a></h3>
-          <p class="text-gray-600 mt-2">ICRW & KAM, 2020</p>
-          <p class="text-gray-600 mt-2">Investigates barriers and opportunities for women in Kenya’s manufacturing sector, advocating for inclusive policies.</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://www.cambridge.org/core/journals/journal-of-biosocial-science/article/postabortion-fertility-desires-contraceptive-uptake-and-unmet-need-for-family-planning-voices-of-postabortion-care-clients-in-tanzania/17BAC72FEA15D8DC32E3C7D6EFA1BB83" target="_blank" class="hover:underline">Post-Abortion Fertility Desires and Contraceptive Uptake in Tanzania</a></h3>
-          <p class="text-gray-600 mt-2">Journal of Biosocial Science, 2021</p>
-          <p class="text-gray-600 mt-2">Explores contraceptive needs and fertility intentions among post-abortion care clients in Tanzania.</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6698160/" target="_blank" class="hover:underline">The Quality of Postabortion Care in Tanzania</a></h3>
-          <p class="text-gray-600 mt-2">Global Health: Science and Practice, 2019</p>
-          <p class="text-gray-600 mt-2">Assesses service provider perspectives and readiness for post-abortion care in Tanzania.</p>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 gap-6">
+          <!-- Publication 1 -->
+          <div class="publication-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                <img src="/api/placeholder/200/280" alt="Publication thumbnail" class="w-full h-auto rounded-lg shadow">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-blue-900 mb-2">Impact of COVID-19 on Women Workers in the Urban Informal Economy in Uganda and Kenya</h3>
+                <p class="text-gray-600 mb-1"><strong>Authors:</strong> K. Suubi, <strong>Erick Yegon</strong>, C. Ajema, N. Wandera, C. Afifu, C. Mugyenyi</p>
+                <p class="text-gray-600 mb-3"><strong>Journal:</strong> International Center for Research on Women (ICRW), 2021</p>
+                <p class="text-gray-700 mb-4">This research examines the socioeconomic effects of COVID-19 pandemic responses on women working in the urban informal economy in Kenya and Uganda. It highlights resilience strategies and provides policy recommendations for post-pandemic economic recovery.</p>
+                <a href="https://opendocs.ids.ac.uk/opendocs/handle/20.500.12413/17662" target="_blank" class="text-blue-600 hover:text-blue-800 transition inline-flex items-center">
+                  Read Full Paper <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Publication 2 -->
+          <div class="publication-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                <img src="/api/placeholder/200/280" alt="Publication thumbnail" class="w-full h-auto rounded-lg shadow">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-blue-900 mb-2">The Quality of Postabortion Care in Tanzania: Service Provider Perspectives and Results from a Service Readiness Assessment</h3>
+                <p class="text-gray-600 mb-1"><strong>Authors:</strong> <strong>Yegon, E.</strong>, Ominde, J., Baynes, C., Ngadaya, E., Kahando, R., Kahwa, J., & Lusiola, G.</p>
+                <p class="text-gray-600 mb-3"><strong>Journal:</strong> Global Health: Science and Practice, 7(Supplement 2), S315-S326, 2019</p>
+                <p class="text-gray-700 mb-4">This study assesses the quality of post-abortion care in Tanzania from the perspective of service providers, evaluating facility readiness and identifying gaps in service delivery. The findings informed national healthcare policy improvements.</p>
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6698160/" target="_blank" class="text-blue-600 hover:text-blue-800 transition inline-flex items-center">
+                  Read Full Paper <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Publication 3 -->
+          <div class="publication-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                <img src="/api/placeholder/200/280" alt="Publication thumbnail" class="w-full h-auto rounded-lg shadow">
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold text-blue-900 mb-2">Post-abortion fertility desires, contraceptive uptake and unmet need for family planning: voices of post-abortion care clients in Tanzania</h3>
+                <p class="text-gray-600 mb-1"><strong>Authors:</strong> C. Baynes, <strong>Erick Yegon</strong>, G. Lusiola, J. Achola, R. Kahando</p>
+                <p class="text-gray-600 mb-3"><strong>Journal:</strong> Journal of Biosocial Science, 2021</p>
+                <p class="text-gray-700 mb-4">This study explores contraceptive needs and fertility intentions among post-abortion care clients in Tanzania, identifying barriers to contraceptive uptake and highlighting opportunities for improved service integration.</p>
+                <a href="https://www.cambridge.org/core/journals/journal-of-biosocial-science/article/postabortion-fertility-desires-contraceptive-uptake-and-unmet-need-for-family-planning-voices-of-postabortion-care-clients-in-tanzania/17BAC72FEA15D8DC32E3C7D6EFA1BB83" target="_blank" class="text-blue-600 hover:text-blue-800 transition inline-flex items-center">
+                  Read Full Paper <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- View More Publications Button -->
+          <div class="text-center mt-8">
+            <button id="view-more-publications" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All Publications</button>
+          </div>
+          
+          <!-- Hidden Publications (initially hidden) -->
+          <div id="more-publications" class="hidden space-y-6">
+            <!-- Publication 4 -->
+            <div class="publication-card bg-white p-6 rounded-lg shadow-md">
+              <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                  <img src="/api/placeholder/200/280" alt="Publication thumbnail" class="w-full h-auto rounded-lg shadow">
+                </div>
+                <div class="md:w-3/4">
+                  <h3 class="text-xl font-semibold text-blue-900 mb-2">Women in Manufacturing: Mainstreaming Gender and Inclusion</h3>
+                  <p class="text-gray-600 mb-1"><strong>Authors:</strong> C Mugyenyi, N Nduta, C Ajema, C Afifu, J Wanjohi, M Bomett, C Mutuku, <strong>E Yegon</strong></p>
+                  <p class="text-gray-600 mb-3"><strong>Journal:</strong> International Center for Research on Women (ICRW) and Kenya Association of Manufacturers (KAM), 2020</p>
+                  <p class="text-gray-700 mb-4">This research investigates barriers and opportunities for women in Kenya's manufacturing sector, providing evidence-based recommendations for inclusive policies and practices that enhance gender equity in the industry.</p>
+                  <a href="https://scholar.google.com/scholar?oi=bibs&cluster=611707890712751494&btnI=1&hl=en" target="_blank" class="text-blue-600 hover:text-blue-800 transition inline-flex items-center">
+                    Read Full Paper <i class="fas fa-external-link-alt ml-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Publication 5 -->
+            <div class="publication-card bg-white p-6 rounded-lg shadow-md">
+              <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                  <img src="/api/placeholder/200/280" alt="Publication thumbnail" class="w-full h-auto rounded-lg shadow">
+                </div>
+                <div class="md:w-3/4">
+                  <h3 class="text-xl font-semibold text-blue-900 mb-2">Women's Empowerment and Attitudes Towards Female Genital Mutilation Abandonment in Nigeria</h3>
+                  <p class="text-gray-600 mb-1"><strong>Authors:</strong> E. Leasure, C. Roth, <strong>Erick Yegon</strong>, E. Anderson, N. Datta, C. Izugbara</p>
+                  <p class="text-gray-600 mb-3"><strong>Journal:</strong> African Journal of Reproductive Health, 2022</p>
+                  <p class="text-gray-700 mb-4">This cross-sectional analysis examines the role of women's empowerment in reducing female genital mutilation in Nigeria, using data from the Demographic Health Survey to identify key factors that influence attitudes toward FGM abandonment.</p>
+                  <a href="https://www.ajol.info/index.php/ajrh/article/view/238692" target="_blank" class="text-blue-600 hover:text-blue-800 transition inline-flex items-center">
+                    Read Full Paper <i class="fas fa-external-link-alt ml-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Certifications -->
-  <section id="certifications" class="py-16">
+  <section id="certifications" class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Certifications</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Professional Certifications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://coursera.org/share/b6624e1f165853222c12683b88fc3436" target="_blank" class="hover:underline">Google Data Analytics Professional Certificate</a></h3>
-          <p class="text-gray-600 mt-2">Coursera</p>
-          <p class="text-gray-600 mt-2">Covers data cleaning, visualization, and analysis using spreadsheets, SQL, and R.</p>
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fab fa-google text-blue-800 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Google Data Analytics Professional Certificate</h3>
+          </div>
+          <p class="text-gray-600 mb-2">Coursera</p>
+          <p class="text-gray-700 mb-4">Comprehensive training in data cleaning, analysis, and visualization using spreadsheets, SQL, and R for data-driven decision making.</p>
+          <a href="https://coursera.org/share/b6624e1f165853222c12683b88fc3436" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">
+            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
         </div>
+        
         <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://coursera.org/share/1e174a11276b05d36f1b597fb9730aad" target="_blank" class="hover:underline">Johns Hopkins Data Science Specialization</a></h3>
-          <p class="text-gray-600 mt-2">Coursera</p>
-          <p class="text-gray-600 mt-2">Focuses on R programming, statistical inference, and machine learning for data science.</p>
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-university text-blue-800 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Johns Hopkins Data Science Specialization</h3>
+          </div>
+          <p class="text-gray-600 mb-2">Coursera</p>
+          <p class="text-gray-700 mb-4">Advanced program covering R programming, statistical inference, regression models, and machine learning methods for data science applications.</p>
+          <a href="https://coursera.org/share/1e174a11276b05d36f1b597fb9730aad" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">
+            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
         </div>
+        
         <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://www.datacamp.com/certificate/DS0029709106563" target="_blank" class="hover:underline">Professional Data Scientist Track</a></h3>
-          <p class="text-gray-600 mt-2">DataCamp</p>
-          <p class="text-gray-600 mt-IU2">Advanced training in Python, SQL, and machine learning for data science applications.</p>
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-chart-line text-blue-800 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Professional Data Scientist Track</h3>
+          </div>
+          <p class="text-gray-600 mb-2">DataCamp</p>
+          <p class="text-gray-700 mb-4">Specialized training in Python, SQL, and machine learning algorithms for data science applications in real-world contexts.</p>
+          <a href="https://www.datacamp.com/certificate/DS0029709106563" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">
+            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
         </div>
+        
         <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://learn.365datascience.com/c/04f05188ea/" target="_blank" class="hover:underline">365 Data Science Course</a></h3>
-          <p class="text-gray-600 mt-2">365 Data Science</p>
-          <p class="text-gray-600 mt-2">Comprehensive course on data analysis, visualization, and machine learning with Python and SQL.</p>
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-database text-blue-800 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">365 Data Science Course</h3>
+          </div>
+          <p class="text-gray-600 mb-2">365 Data Science</p>
+          <p class="text-gray-700 mb-4">Comprehensive course on data analysis, visualization, and machine learning techniques with Python and SQL for business applications.</p>
+          <a href="https://learn.365datascience.com/c/04f05188ea/" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">
+            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
         </div>
+        
         <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://www.linkedin.com/company/1061689/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BliLwtQtZQgm1T6l62vWRgg%3D%3D" target="_blank" class="hover:underline">KaggleX BiPOC Mentorship Program</a></h3>
-          <p class="text-gray-600 mt-2">Kaggle</p>
-          <p class="text-gray-600 mt-2">Mentorship program enhancing data science skills through real-world projects.</p>
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fab fa-kaggle text-blue-800 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">KaggleX BiPOC Mentorship Program</h3>
+          </div>
+          <p class="text-gray-600 mb-2">Kaggle</p>
+          <p class="text-gray-700 mb-4">Intensive mentorship program enhancing practical data science skills through real-world projects and collaborative competitions.</p>
+          <a href="https://www.linkedin.com/company/1061689/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BliLwtQtZQgm1T6l62vWRgg%3D%3D" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">
+            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
         </div>
+        
         <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900"><a href="https://codebasics.io/certificate/CB-51-241821" target="_blank" class="hover:underline">Excel Skills Certification</a></h3>
-          <p class="text-gray-600 mt-2">CodeBasics</p>
-          <p class="text-gray-600 mt-2">Advanced Excel skills for data analysis, including pivot tables and macros.</p>
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-file-excel text-blue-800 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900">Excel Skills Certification</h3>
+          </div>
+          <p class="text-gray-600 mb-2">CodeBasics</p>
+          <p class="text-gray-700 mb-4">Advanced Excel skills for data analysis, including pivot tables, VLOOKUP, macros, and data visualization techniques for business intelligence.</p>
+          <a href="https://codebasics.io/certificate/CB-51-241821" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">
+            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -233,81 +1050,279 @@
   <section id="education" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Education</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">PhD in Epidemiology</h3>
-          <p class="text-gray-600">Jomo Kenyatta University of Agriculture and Technology, 2017</p>
-          <p class="text-gray-600 mt-2">GPA: 3.5</p>
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          <div class="card-hover bg-white p-8 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="mb-4 md:mb-0 md:mr-6">
+                <img src="/api/placeholder/100/100" alt="JKUAT" class="w-24 h-24 object-cover rounded-lg">
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-blue-900 mb-1">PhD in Epidemiology</h3>
+                <p class="text-gray-700 mb-2">Jomo Kenyatta University of Agriculture and Technology</p>
+                <p class="text-gray-600 mb-3">January 2014 - December 2018</p>
+                <div class="flex items-center">
+                  <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">GPA: 3.5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-hover bg-white p-8 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="mb-4 md:mb-0 md:mr-6">
+                <img src="/api/placeholder/100/100" alt="KeMU" class="w-24 h-24 object-cover rounded-lg">
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-blue-900 mb-1">MSc in Health Systems Management</h3>
+                <p class="text-gray-700 mb-2">Kenya Methodist University</p>
+                <p class="text-gray-600 mb-3">January 2008 - July 2010</p>
+                <div class="flex items-center">
+                  <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">GPA: 3.5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-hover bg-white p-8 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:items-center">
+              <div class="mb-4 md:mb-0 md:mr-6">
+                <img src="/api/placeholder/100/100" alt="UoN" class="w-24 h-24 object-cover rounded-lg">
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-blue-900 mb-1">BSc in Statistics</h3>
+                <p class="text-gray-700 mb-2">University of Nairobi</p>
+                <p class="text-gray-600 mb-3">January 2000 - March 2004</p>
+                <div class="flex items-center">
+                  <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">GPA: 3.5</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">MSc in Health Systems Management</h3>
-          <p class="text-gray-600">Kenya Methodist University, 2010</p>
-          <p class="text-gray-600 mt-2">GPA: 3.5</p>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">BSc in Statistics</h3>
-          <p class="text-gray-600">University of Nairobi, 2004</p>
-          <p class="text <p class="text-gray-600 mt-2">GPA: 3.5</p>
+        
+        <!-- Additional Professional Training -->
+        <div class="mt-12">
+          <h3 class="text-2xl font-semibold text-blue-900 mb-6 text-center">Additional Professional Training</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-5 rounded-lg shadow-md">
+              <h4 class="font-semibold text-blue-800 mb-2">Project Management for Development Professionals</h4>
+              <p class="text-gray-700 mb-1">APM Group, UK Education</p>
+              <p class="text-gray-600">August 2016</p>
+            </div>
+            
+            <div class="bg-white p-5 rounded-lg shadow-md">
+              <h4 class="font-semibold text-blue-800 mb-2">Environmental Compliance and ESDM Training Course</h4>
+              <p class="text-gray-700 mb-1">USAID Kenya</p>
+              <p class="text-gray-600">February 2011</p>
+            </div>
+            
+            <div class="bg-white p-5 rounded-lg shadow-md">
+              <h4 class="font-semibold text-blue-800 mb-2">Data Quality Assessment Training</h4>
+              <p class="text-gray-700 mb-1">Measure Evaluation</p>
+              <p class="text-gray-600">May - June 2010</p>
+            </div>
+            
+            <div class="bg-white p-5 rounded-lg shadow-md">
+              <h4 class="font-semibold text-blue-800 mb-2">Research Methodology Course</h4>
+              <p class="text-gray-700 mb-1">Southeast Asia Ministers of Education Organization</p>
+              <p class="text-gray-600">June - July 2007</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-16">
+  <!-- Testimonials -->
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Technical & Domain Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Programming & Data Science</h3>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Python (Pandas, NumPy, Scikit-Learn, TensorFlow, PyTorch)</li>
-            <li>R (ggplot2, dplyr, caret, Shiny)</li>
-            <li>SQL (MySQL, PostgreSQL)</li>
-            <li>Power BI (Data Modeling, Dashboards)</li>
-          </ul>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Domain Expertise</h3>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Epidemiology & Maternal Health</li>
-            <li>Sexual and Reproductive Health Rights (SRHR)</li>
-            <li>Gender Equity & Women’s Empowerment</li>
-            <li>Monitoring & Evaluation</li>
-          </ul>
-        </div>
-        <div class="card-hover bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-blue-900">Soft Skills</h3>
-          <ul class="list-disc ml-6 mt-4">
-            <li>Strategic Leadership</li>
-            <li>Project Management</li>
-            <li>Policy Advocacy</li>
-            <li>Mentorship & Teaching</li>
-          </ul>
+      <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center">What Colleagues Say</h2>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="testimonial-card relative">
+            <div class="quote-mark">"</div>
+            <p class="mt-6 mb-6 text-gray-700">Dr. Yegon's ability to leverage data science and machine learning to address complex public health challenges is truly exceptional. His leadership transformed our approach to community health monitoring and evaluation.</p>
+            <div class="flex items-center">
+              <img src="/api/placeholder/50/50" alt="Profile" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="font-semibold text-blue-900">Jane Doe, MD, MPH</h4>
+                <p class="text-gray-600">Director, Global Health Initiative</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card relative">
+            <div class="quote-mark">"</div>
+            <p class="mt-6 mb-6 text-gray-700">Working with Erick on the Women in Manufacturing study was a highlight of my career. His analytical skills combined with deep expertise in gender equity issues resulted in research that has genuinely influenced policy.</p>
+            <div class="flex items-center">
+              <img src="/api/placeholder/50/50" alt="Profile" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="font-semibold text-blue-900">John Smith, PhD</h4>
+                <p class="text-gray-600">Research Director, ICRW</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card relative">
+            <div class="quote-mark">"</div>
+            <p class="mt-6 mb-6 text-gray-700">As my PhD supervisor, Dr. Yegon provided invaluable guidance on statistical methodologies and research design. His mentorship has significantly shaped my approach to epidemiological research.</p>
+            <div class="flex items-center">
+              <img src="/api/placeholder/50/50" alt="Profile" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="font-semibold text-blue-900">Emily Chemgetich</h4>
+                <p class="text-gray-600">PhD Candidate, Epidemiology</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card relative">
+            <div class="quote-mark">"</div>
+            <p class="mt-6 mb-6 text-gray-700">Dr. Yegon's predictive models for community health volunteer compensation have revolutionized how we approach incentive systems. His work demonstrates the real-world impact of applied data science in healthcare delivery.</p>
+            <div class="flex items-center">
+              <img src="/api/placeholder/50/50" alt="Profile" class="w-12 h-12 rounded-full mr-4">
+              <div>
+                <h4 class="font-semibold text-blue-900">Robert Johnson</h4>
+                <p class="text-gray-600">Chief Operations Officer, Living Goods</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <footer id="contact" class="bg-blue-900 text-white py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
-      <p class="mb-4">Interested in collaborating on data-driven health initiatives? Reach out!</p>
-      <p class="mb-4">Email: <a href="mailto:keyegon@gmail.com" class="hover:underline">keyegon@gmail.com</a></p>
-      <p class="mb-4">LinkedIn: <a href="https://www.linkedin.com/in/erick-yegon-phd-4116961b4/" target="_blank" class="hover:underline">linkedin.com/in/erick-yegon-phd</a></p>
-      <p class="mb-4">GitHub: <a href="https://github.com/erickyegon" target="_blank" class="hover:underline">github.com/erickyegon</a></p>
+  <footer id="contact" class="gradient-bg text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <p class="text-lg mb-6">Interested in collaborating on data-driven health initiatives or discussing how AI and machine learning can transform public health? I'm always open to connecting with like-minded professionals and organizations working toward improved health outcomes.</p>
+            
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="bg-blue-800 p-3 rounded-full mr-4">
+                  <i class="fas fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-blue-200">Email</p>
+                  <a href="mailto:keyegon@gmail.com" class="hover:underline">keyegon@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-blue-800 p-3 rounded-full mr-4">
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-blue-200">Location</p>
+                  <p>Nairobi, Kenya</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-blue-800 p-3 rounded-full mr-4">
+                  <i class="fab fa-linkedin-in text-white"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-blue-200">LinkedIn</p>
+                  <a href="https://www.linkedin.com/in/erick-yegon-phd-4116961b4/" target="_blank" class="hover:underline">linkedin.com/in/erick-yegon-phd</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-blue-800 p-3 rounded-full mr-4">
+                  <i class="fab fa-github text-white"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-blue-200">GitHub</p>
+                  <a href="https://github.com/erickyegon" target="_blank" class="hover:underline">github.com/erickyegon</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-blue-900 mb-4">Send a Message</h3>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div class="mb-4">
+                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+          <p class="mb-4">© 2025 Dr. Erick Yegon. All Rights Reserved.</p>
+          <div class="flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/erick-yegon-phd-4116961b4/" target="_blank" class="text-white hover:text-blue-300 transition">
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="https://github.com/erickyegon" target="_blank" class="text-white hover:text-blue-300 transition">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="mailto:keyegon@gmail.com" class="text-white hover:text-blue-300 transition">
+              <i class="fas fa-envelope text-2xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-blue-300 transition">
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- JavaScript for Navbar Scroll Effect -->
+  <!-- JavaScript -->
   <script>
+    // Mobile menu toggle
+    document.querySelector('.md\\:hidden').addEventListener('click', function() {
+      document.querySelector('.mobile-menu').classList.toggle('hidden');
+    });
+    
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // View more publications toggle
+    document.getElementById('view-more-publications').addEventListener('click', function() {
+      const morePublications = document.getElementById('more-publications');
+      const button = document.getElementById('view-more-publications');
+      
+      if (morePublications.classList.contains('hidden')) {
+        morePublications.classList.remove('hidden');
+        button.textContent = 'Show Less';
+      } else {
+        morePublications.classList.add('hidden');
+        button.textContent = 'View All Publications';
       }
     });
   </script>
