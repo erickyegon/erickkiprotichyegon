@@ -3,18 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Erick Yegon – Data Science & Public Health</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Dr. Erick Yegon – Data Scientist | Epidemiologist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: square;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* Hero Section */
+    #hero {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    #hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .project-grid,
+    .cert-grid,
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Hero Section -->
   <section id="hero">
     <div class="container">
-      <img src="assets/profile.jpg" alt="Dr. Erick Yegon" class="profile-pic">
+      <img src="assets/profile.jpg" alt="Dr. Erick Yegon" style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin:auto;">
       <h1>Dr. Erick Yegon</h1>
       <h2>Data Scientist | Epidemiologist | Public Health Leader</h2>
-      <p>Leveraging AI & Machine Learning to improve maternal and reproductive health outcomes globally.</p>
+      <p>Leveraging AI and machine learning to improve maternal and reproductive health outcomes globally.</p>
       <a href="#projects" class="btn">Explore My Work</a>
       <a href="assets/Erick_Yegon_CV.pdf" target="_blank" class="btn">Download CV</a>
     </div>
@@ -28,16 +122,8 @@
 
       <p>In addition to my technical expertise, I’m deeply committed to knowledge sharing and mentorship. I serve as academic supervisor for several PhD students in public health and nursing, and I have previously taught Biostatistics at Jomo Kenyatta University of Agriculture and Technology.</p>
 
-      <p>As a passionate advocate for scientific rigor and quality research, I contribute to advancing public health discourse through peer review. I am a journal reviewer for:</p>
-      <ul>
-        <li><strong>PLOS Global Public Health</strong></li>
-        <li><strong>Frontiers in Global Women's Health</strong></li>
-        <li><strong>Frontiers in Public Health</strong></li>
-      </ul>
-      <p>I also serve as an abstract reviewer for major international conferences including the <strong>International Conference on Family Planning (ICFP)</strong> and <strong>Women Deliver</strong>.</p>
-
       <h3>Core Expertise</h3>
-      <ul class="skills-list">
+      <ul>
         <li>Artificial Intelligence & Machine Learning</li>
         <li>Epidemiology & Maternal Health</li>
         <li>Gender Equity & SRHR</li>
@@ -49,19 +135,56 @@
     </div>
   </section>
 
-  <!-- Projects Preview -->
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <h3>Global Director of Performance, Evidence, and Insights</h3>
+        <p><em>Living Goods, Nairobi, Kenya</em></p>
+        <ul>
+          <li>Spearheaded integration of data science into community health initiatives</li>
+          <li>Developed predictive model for CHV compensation (30% efficiency gain)</li>
+          <li>Automated monthly reporting pipeline (60% faster insights)</li>
+          <li>Improved KPI tracking and decision-making across teams</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Senior Associate Director, Research Africa Region</h3>
+        <p><em>International Center for Research on Women (ICRW), Nairobi, Kenya</em></p>
+        <ul>
+          <li>Created Kenya Women Economic Empowerment Community of Practice (WEE-COP)</li>
+          <li>Conducted cross-country analysis of youth impact during the pandemic</li>
+          <li>Published key findings on gender equity in manufacturing and SRHR</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Director, Ipas Africa Alliance</h3>
+        <p><em>Nairobi, Kenya</em></p>
+        <ul>
+          <li>Managed $25M+ multi-country projects focused on adolescent SRHR</li>
+          <li>Coordinated policy advocacy efforts influencing national guidelines</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
   <section id="projects">
     <div class="container">
       <h2>Featured Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
+        <div class="card">
           <img src="https://via.placeholder.com/300x200 " alt="CHV Compensation Model">
           <h3>CHV Compensation Prediction Model</h3>
           <p>A machine learning model used by Living Goods HR to predict optimal compensation structures for Community Health Volunteers based on performance and incentive types.</p>
           <a href="https://github.com/erickyegon/chv-compensation-model " target="_blank">GitHub Repo</a>
         </div>
 
-        <div class="project-card">
+        <div class="card">
           <img src="https://via.placeholder.com/300x200 " alt="Postabortion Care Dashboard">
           <h3>Post-Abortion Care Dashboard</h3>
           <p>An interactive dashboard built using Python and Power BI to visualize service readiness and client satisfaction metrics across Tanzania.</p>
@@ -71,7 +194,101 @@
     </div>
   </section>
 
-  <!-- Footer / Contact -->
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+      <h2>Peer-Reviewed Publications</h2>
+      <div class="pub-grid">
+        <div class="card">
+          <h3><a href="https://www.icrw.org/publications/impact-of-covid-19-on-women-workers-in-the-urban-informal-economy-in-uganda-and-kenya/ " target="_blank">Impact of COVID-19 on women workers in the urban informal economy in Uganda and Kenya</a></h3>
+          <p>ICRW, 2021</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://www.ajol.info/index.php/ajrh/article/view/238692 " target="_blank">Women’s empowerment and attitudes towards female genital mutilation abandonment in Nigeria</a></h3>
+          <p>African Journal of Reproductive Health, 2022</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://www.icrw.org/wp-content/uploads/2021/04/ICRW_Measuring_Girls_Empowerment_02.21_Final.pdf " target="_blank">Women in Manufacturing: Mainstreaming Gender and Inclusion</a></h3>
+          <p>ICRW & KAM, 2020</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8357015/ " target="_blank">Post-abortion fertility desires, contraceptive uptake and unmet need for family planning: voices of post-abortion care clients in Tanzania</a></h3>
+          <p>Journal of Biosocial Science, 2021</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="cert-grid">
+        <div class="card">
+          <h3><a href="https://coursera.org/share/b6624e1f165853222c12683b88fc3436 " target="_blank">Google Data Analytics Professional Certificate</a></h3>
+          <p>Coursera</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://coursera.org/share/1e174a11276b05d36f1b597fb9730aad " target="_blank">Johns Hopkins Data Science Specialization</a></h3>
+          <p>Coursera</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://www.datacamp.com/certificate/DS0029709106563 " target="_blank">DataCamp – Professional Data Scientist Track</a></h3>
+          <p>DataCamp</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://learn.365datascience.com/c/04f05188ea/ " target="_blank">365 Data Science Course</a></h3>
+          <p>365 Data Science</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://www.linkedin.com/company/1061689/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BliLwtQtZQgm1T6l62vWRgg%3D%3D " target="_blank">KaggleX BiPOC Mentorship Program</a></h3>
+          <p>Kaggle</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://codebasics.io/certificate/CB-51-241821 " target="_blank">Excel Skills Certification</a></h3>
+          <p>CodeBasics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>PhD in Epidemiology</h3>
+        <p>Jomo Kenyatta University of Agriculture and Technology</p>
+      </div>
+      <div class="card">
+        <h3>MSc in Health Systems Management</h3>
+        <p>Kenya Methodist University</p>
+      </div>
+      <div class="card">
+        <h3>BSc in Statistics</h3>
+        <p>University of Nairobi</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2>Technical & Domain Skills</h2>
+      <ul>
+        <li>Python (Pandas, Scikit-Learn, TensorFlow)</li>
+        <li>R (ggplot2, dplyr, Shiny)</li>
+        <li>SQL (MySQL, PostgreSQL)</li>
+        <li>Power BI</li>
+        <li>Machine Learning & AI</li>
+        <li>Epidemiology & Public Health</li>
+        <li>Gender Equity & SRHR</li>
+        <li>Monitoring & Evaluation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <footer id="contact">
     <div class="container">
       <p>Email: <a href="mailto:keyegon@gmail.com">keyegon@gmail.com</a></p>
